@@ -1,21 +1,26 @@
 # nested_looping
 
-This code defines a function called print_triangle that takes an integer n as input. The function prompts the user for a command and then performs different actions based on the command.
+The provided code defines several functions and a main program that prompts the user for a number and a command. Here's what the code does step by step:
 
-Here's a breakdown of what the code does:
+The print_triangle_pattern function takes an input n and prints a triangle pattern using numbers. It uses nested loops to generate the rows of the triangle and prints each row using print(" ".join(row)).
 
-The function starts by checking if the input n is equal to -1. If it is, the function prints "Bye!" and returns False to indicate that the program should exit.
+The print_multiplication_table function takes an input n and prints a multiplication table up to the given number. It also uses nested loops to generate the rows and columns of the table and prints each row using print(" ".join(f"{num:2d}" for num in row)).
 
-If n is not -1, the function prompts the user to enter a command by using the input function and assigns the input to the variable command.
+The get_valid_number_input function prompts the user with a given prompt and ensures that the user enters a valid integer. It uses a while loop and a try-except block to handle invalid input by catching the ValueError and displaying an error message.
 
-If the command is "mp", the function enters a loop that iterates from 1 to n. In each iteration, it creates a list called row where each element is the product of i and j, where i is the current iteration value and j ranges from 1 to n. Then, it prints the elements of row separated by spaces.
+The main function is the entry point of the program. It initializes variables for the maximum number of prompts and the current number of prompts. It runs a while loop that prompts the user for a number and a command until the maximum number of prompts is reached or the user enters -1.
 
-If the command is "triangle", the function enters a loop that iterates from 1 to n. In each iteration, it creates a list called row where each element is a string representation of j, where j ranges from 1 to i. Then, it prints the elements of row separated by spaces. This loop prints an upward triangle.
+Inside the loop, the get_valid_number_input function is called to get a valid number input from the user. If the user enters -1, the program prints "Bye!" and breaks out of the loop.
 
-After printing the upward triangle, the function enters another loop that iterates from n-1 down to 1. In each iteration, it creates a list called row where each element is a string representation of j, where j ranges from 1 to i. Then, it prints the elements of row separated by spaces. This loop prints a downward triangle.
+The user is then prompted for a command ("triangle" or "mp"). Depending on the command, either the print_triangle_pattern or print_multiplication_table function is called with the user's number input.
 
-If the command is neither "mp" nor "triangle", the function prints "Invalid command".
+If an invalid command is entered, the program prints "Invalid command".
 
-The function returns True to indicate that the program should continue.
+If the maximum number of prompts is reached, the program prints "Maximum number of prompts reached. Exiting."
 
-Outside the function, there is a loop that allows the user to enter a number and execute the print_triangle function. The loop continues until either the user enters -1 or the maximum number of prompts (max_prompts) is reached. If the maximum number of prompts is reached, the program prints "Maximum number of prompts reached. Exiting." and breaks out of the loop.
+Overall, this program allows the user to enter a number and a command to either print a triangle pattern or a multiplication table. It includes input validation and a maximum prompt limit.
+
+
+
+
+
